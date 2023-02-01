@@ -9,6 +9,7 @@
 <body>
     
     <script type="text/vexscript">
+        // demonstrating recursive functions
         func double(a) {
             if (a == 0) {
                 return 0;
@@ -16,7 +17,10 @@
             return 2 + double(a - 1);
         }
 
-        print(double(5));
+        // demonstrating looping
+        for (var i = 0; i < 10; i = i + 1) {
+            print(i + ": " + double(i));
+        }
     </script>
             
     <script>
