@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>VexScript</title>
+
+    <script src="./VexScript.js"></script>
+</head>
+<body>
+    
+    <script type="text/vexscript">
+        func double(a) {
+            if (a == 0) {
+                return 0;
+            }
+            return 2 + double(a - 1);
+        }
+
+        print(double(5));
+    </script>
+            
+    <script>
+        let VM = new VexScriptVM();
+
+        let scriptTags = document.getElementsByTagName("script");
+        for (var i = 0; i < scriptTags.length; i++) {
+            let scriptEl = scriptTags[i];
+            if (scriptEl.type === "text/vexscript") {
+                VM.run(scriptEl.innerHTML);
+            }
+        }
+    </script>
+    
+</body>
+</html>
